@@ -1,10 +1,29 @@
+# P10k
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]];
+	then
+		source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # Ini nyomot dari bash
 alias ll='ls -alF'
 alias la='ls -A'
 alias grep='grep --color=auto'
+# logo-ls is coool
+# https://github.com/Yash-Handa/logo-ls
+alias lls='logo-ls'
 
 # Buat nunjukin IP public
 alias ippublik='dig +short myip.opendns.com @resolver1.opendns.com'
+
+# Editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+# Cek koneksi
+alias p='ping -c 20 google.com'
 
 # Bikin direktori terus langsung masuk ke situ
 mcd () {
@@ -27,3 +46,4 @@ setopt appendhistory
 setopt sharehistory
 setopt incappendhistory
 
+export PATH=/home/renisaaa/.local/bin:/home/renisaaa/.gem/ruby/2.7.0/bin:$PATH
